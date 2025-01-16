@@ -1,0 +1,12 @@
+
+$side-padding-large: 30px;
+$side-padding-mobile: 10px;
+
+.chapter-wrapper {
+    @media screen and (min-width: 500px) {
+        margin: 0 $side-padding-large;
+    }
+    @media screen and (max-width: 499px) {
+        margin: 0 $side-padding-mobile;
+    }  
+}
