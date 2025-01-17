@@ -1,0 +1,17 @@
+@use "../../assets/styles/common.scss" as *;
+
+.wellcome-container {
+    // width: 100%;
+    min-height: 700px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 70%;
+        height: auto;
+        max-height: 70%;
+    }
+}

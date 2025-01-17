@@ -1,5 +1,3 @@
-import "./site-menu.scss"
-
 type SiteMenuItemType = {
     title: string,
     divId: string,
@@ -20,17 +18,15 @@ export const siteMenuItems: SiteMenuItemType[] = [
         orderIndex: 3,
         title: "Новости",
         divId: "news",
-    }
+    },
+    {
+        orderIndex: 4,
+        title: "Экскурсоводы",
+        divId: "gids",
+    },
+    {
+        orderIndex: 5,
+        title: "Контакты",
+        divId: "contacts",
+    },
 ]
-
-export const SiteMenu = () => {
-    return (
-        <div>
-            {siteMenuItems.map(m => {
-                return (
-                    <div>{m.title}</div>
-                )
-            })}
-        </div>
-    )
-}

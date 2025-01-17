@@ -3,6 +3,8 @@ $side-padding-large: 30px;
 $side-padding-mobile: 10px;
 
 .chapter-wrapper {
+    box-sizing: border-box;
+
     @media screen and (min-width: 500px) {
         margin: 0 $side-padding-large;
     }
@@ -10,3 +12,30 @@ $side-padding-mobile: 10px;
         margin: 0 $side-padding-mobile;
     }  
 }
+
+.chapter-wrapper-no-right-padding {
+    box-sizing: border-box;
+    
+    @media screen and (min-width: 500px) {
+        margin-left: $side-padding-large;
+    }
+    @media screen and (max-width: 499px) {
+        margin-left: $side-padding-mobile;
+    }  
+}
+
+$secondary-color: #FBEFBC;
+
+$width-devider-lg-width: 1133px;
+$width-devider: 745px;
+$width-devider-mobile: 650px;
+$width-devider-micro-screen: 360px;
+
+$main-side-padding-large: 120px;
+$main-side-padding-middle: 80px;
+$main-side-padding-small: 40px;
+$main-side-padding-mobile: 20px;
+
+$titles_gap: 16px;
+
+$green_color: #8AF451;

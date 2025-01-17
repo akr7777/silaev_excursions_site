@@ -1,0 +1,66 @@
+@use "../../assets/styles/common.scss" as *;
+
+.nav-desctop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+
+    
+    a {
+        font-size: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.nav-mobile {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+        // position: relative;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+}
+
+.mobile-menu-area {
+    position: absolute;
+    top: 22.5px;
+    right: 22.5px;
+
+    max-width: 500px;
+    min-width: 250px;
+    width: fit-content;
+    background-color: $secondary-color;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end;
+
+    padding: 10px 20px;
+
+    border-radius: 12px;
+    border: 1px solid grey;
+
+    a {
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}
