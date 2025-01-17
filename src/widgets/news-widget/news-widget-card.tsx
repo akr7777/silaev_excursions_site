@@ -1,5 +1,5 @@
 import { CustomButton } from "../../components/custom-button/custom-button"
-import { NewType } from "../../store/appSlice/types/event-types"
+import { NewType } from "../../store/appSlice/types/app-types"
 import "./news-widget.scss"
 
 export const NewsWidgetCard = ( { n } : { n: NewType }) => {

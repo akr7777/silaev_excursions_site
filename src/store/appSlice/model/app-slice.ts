@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { appInitContent, AppSliceType, } from "../types/event-types"
-import { GetAllEventThunkResType, GetAllNewThunkResType } from "../types/event-thunk-types"
+import { appInitContent, AppSliceType, GidType, } from "../types/app-types"
+import { GetAllEventThunkResType, GetAllNewThunkResType } from "../types/app-thunk-types"
 import { appSliceThunks } from "./app-thunks"
 
 const appSlice = createSlice({
@@ -12,6 +12,9 @@ const appSlice = createSlice({
       },
       setNewsLoading: (state: AppSliceType, action: PayloadAction<boolean>) => {
         state.isEventsLoading = action.payload
+      },
+      setGidsLoading: (state: AppSliceType, action: PayloadAction<boolean>) => {
+        state.isGidsLoading = action.payload
       },
       
     },
@@ -42,6 +45,12 @@ const appSlice = createSlice({
             })
         }
         
+      })
+
+      builder.addCase(appSliceThunks.getGids.fulfilled, (state: AppSliceType, action: PayloadAction<GidType[]>) => {
+        if (action.payload && action.payload.length > 0) {
+          state.gids = action.payload
+        }
       })
 
       // builder.addCase(eventsSliceThunks.getById.fulfilled, (state: EventSliceType, action: PayloadAction<GetOneEventThunkResType>) => {

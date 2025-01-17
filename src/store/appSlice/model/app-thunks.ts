@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { appSliceActions } from "./app-slice"
-import { eventAPI, newAPI } from "../api/api"
+import { eventAPI, gidsAPI, newAPI } from "../api/api"
 // import { apiErrorMessage } from "../../../../shared/api/error-message"
 // import { toast } from "react-toastify"
 
@@ -47,6 +47,23 @@ export const appSliceThunks = {
       
     } catch (err: any) {
       dispatch(appSliceActions.setNewsLoading(false))
+    }
+  }),
+
+  getGids: createAsyncThunk('app/getGids', async (_, {dispatch}) => {
+    try {
+      dispatch(appSliceActions.setGidsLoading(true))
+      const res = await gidsAPI.getAll()
+
+      dispatch(appSliceActions.setGidsLoading(false))
+      
+      return res.data
+      
+    } catch (err: any) {
+      dispatch(appSliceActions.setGidsLoading(false))
+      // const status: number = err.response.status
+      // const message: string = err.response.data.message
+      // apiErrorMessage({ status, message })
     }
   }),
 

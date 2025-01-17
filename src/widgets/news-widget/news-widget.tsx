@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router"
 import { ChapterTitle } from "../../components/chapter-title/chapter-title"
 import { useAppDispatch, useAppSelector } from "../../store/store"
-import { NewType } from "../../store/appSlice/types/event-types"
+import { NewType } from "../../store/appSlice/types/app-types"
 import { Preloader } from "../../components/preloader/preloader"
 import { NewsWidgetCard } from "./news-widget-card"
 import { CustomButton } from "../../components/custom-button/custom-button"

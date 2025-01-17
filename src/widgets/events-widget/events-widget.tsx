@@ -1,4 +1,4 @@
-import { EventType } from "../../store/appSlice/types/event-types"
+import { EventType } from "../../store/appSlice/types/app-types"
 import { useAppDispatch, useAppSelector } from "../../store/store"
 import { EventWidgetCard } from "./event-widget-card/event-widget-card"
 import { ReactMultiCarusel } from "../../components/carusel-3/milti-carusel"

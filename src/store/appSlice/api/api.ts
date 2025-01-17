@@ -18,3 +18,9 @@ export const newAPI = {
     return instance.get('news/' + id)
   },
 }
+
+export const gidsAPI = {
+  getAll: (): Promise<AxiosResponse> => {
+    return instance.get('users')
+  },
+}

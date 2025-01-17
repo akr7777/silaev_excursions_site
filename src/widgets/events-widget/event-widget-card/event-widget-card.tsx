@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-import { EventType } from "../../../store/appSlice/types/event-types"
+import { EventType } from "../../../store/appSlice/types/app-types"
 import { DATE_TIME_FORMAT_1 } from "../../../shared/consts"
 
 import "./event-widget-card.scss"
