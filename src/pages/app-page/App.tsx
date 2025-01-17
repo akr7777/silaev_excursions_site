@@ -1,16 +1,14 @@
 import { Header } from '../header/header'
-import { WellcomeWidget } from '../../widgets/wellcome-widget/wellcome'
-import { Contacts } from '../contacts/contacts'
+import { ContactsWidget } from '../../widgets/contacts-widget/contacts-widget'
 import { Outlet } from 'react-router'
 
 function App() {
   return (
     <>
       <Header />
-      <WellcomeWidget />
       <main>
         <Outlet />
-        <Contacts />
+        <ContactsWidget />
       </main>
     </>
   )

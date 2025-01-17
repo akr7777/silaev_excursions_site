@@ -1,7 +1,7 @@
 import { ResizeType, useResize } from "../../hooks/use-resize/use-resize"
-import { Logo } from "../../shared/logo/logo"
-import { SiteMenuDesctop } from "../../shared/site-menu/site-menu-desctop"
-import { SiteMenuMobile } from "../../shared/site-menu/site-menu-mobile"
+import { Logo } from "../../components/logo/logo"
+import { SiteMenuDesctop } from "../../components/site-menu/site-menu-desctop"
+import { SiteMenuMobile } from "../../components/site-menu/site-menu-mobile"
 
 import "./header.scss"
 

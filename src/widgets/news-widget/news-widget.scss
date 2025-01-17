@@ -1,0 +1,30 @@
+@use "../../assets/styles/common.scss" as *;
+
+.news-widget-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-widget-card {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    img {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 7px;
+    }
+}
+
+.news-widget-card-text {
+    display: grid;
+    grid-template-rows: 30px 1fr 35px;
+
+    h3 { 
+        margin: 0;
+        padding: 0;
+    }
+
+}

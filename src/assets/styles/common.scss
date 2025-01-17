@@ -26,16 +26,22 @@ $side-padding-mobile: 10px;
 
 $secondary-color: #FBEFBC;
 
-$width-devider-lg-width: 1133px;
-$width-devider: 745px;
-$width-devider-mobile: 650px;
-$width-devider-micro-screen: 360px;
+// $width-devider-lg-width: 1133px;
+// $width-devider: 745px;
+// $width-devider-mobile: 650px;
+// $width-devider-micro-screen: 360px;
 
-$main-side-padding-large: 120px;
-$main-side-padding-middle: 80px;
-$main-side-padding-small: 40px;
-$main-side-padding-mobile: 20px;
+// $main-side-padding-large: 120px;
+// $main-side-padding-middle: 80px;
+// $main-side-padding-small: 40px;
+// $main-side-padding-mobile: 20px;
 
-$titles_gap: 16px;
+// $titles_gap: 16px;
 
-$green_color: #8AF451;
+// $green_color: #8AF451;
+
+.common-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

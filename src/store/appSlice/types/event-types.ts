@@ -46,5 +46,5 @@ export const appInitContent: AppSliceType = {
     news: [],
     isNewsLoading: false,
     gids: [],
-    isGidsLoading: false
+    isGidsLoading: false,
 }

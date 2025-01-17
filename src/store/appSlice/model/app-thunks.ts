@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { appSliceActions } from "./app-slice"
-import { eventAPI } from "../api/api"
+import { eventAPI, newAPI } from "../api/api"
 // import { apiErrorMessage } from "../../../../shared/api/error-message"
 // import { toast } from "react-toastify"
 
@@ -35,6 +35,20 @@ export const appSliceThunks = {
   //     apiErrorMessage({ status, message })
   //   }
   // }),
+
+  getNews: createAsyncThunk('app/getNews', async (_, {dispatch}) => {
+    try {
+      dispatch(appSliceActions.setNewsLoading(true))
+      const res = await newAPI.getAll()
+
+      dispatch(appSliceActions.setNewsLoading(false))
+      
+      return res.data
+      
+    } catch (err: any) {
+      dispatch(appSliceActions.setNewsLoading(false))
+    }
+  }),
 
   // addNew: createAsyncThunk('events/addNew', async (data: AddEventThunkReqType, {dispatch}) => {
   //   try {

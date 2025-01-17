@@ -1,8 +1,7 @@
 import { EventType } from "../../store/appSlice/types/event-types"
 import { useAppDispatch, useAppSelector } from "../../store/store"
 import { EventWidgetCard } from "./event-widget-card/event-widget-card"
-import { v4 } from "uuid"
-import { ReactMultiCarusel } from "../../shared/carusel-3/milti-carusel"
+import { ReactMultiCarusel } from "../../components/carusel-3/milti-carusel"
 import { useNavigate } from "react-router"
 import { CustomButton } from "../../components/custom-button/custom-button"
 import { PATHS } from "../../router/router"
@@ -10,11 +9,15 @@ import { useEffect } from "react"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 
 import "./events-widget.scss"
+import { ChapterTitle } from "../../components/chapter-title/chapter-title"
+import { Preloader } from "../../components/preloader/preloader"
+import { DIV_IDS } from "../../shared/consts"
 
 export const EventWidget = () => {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const events: Array<EventType> = useAppSelector(state => state.appSlice.events)
+    const isLoading: boolean = useAppSelector(state => state.appSlice.isEventsLoading)
 
     useEffect(() => {
         dispatch(appSliceThunks.getEvents())
@@ -25,18 +28,21 @@ export const EventWidget = () => {
     }
 
     return (
-        <div className="chapter-wrapper-no-right-padding">
-            <h3>Наши мероприятия</h3>
+        <div className="chapter-wrapper-no-right-padding" id={DIV_IDS.events}>
+            <ChapterTitle title="Наши мероприятия"/>
 
-            <ReactMultiCarusel slides={
+            { isLoading ? <Preloader /> : (
+                <ReactMultiCarusel slides={
                 !events ? [] : events.map(e => {
                     return (
-                        <EventWidgetCard key={v4()} event={e}/>
+                        <EventWidgetCard key={e.id} event={e}/>
                     )
                 }) 
             }/>
+            )}
+            
 
-            <div className="events-btn-container">
+            <div className="common-btn-container">
                 <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} />
             </div>
 

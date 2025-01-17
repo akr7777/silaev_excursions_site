@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { siteMenuItems } from "./menu-content"
-
-import "./site-menu.scss"
-
 import burger from "../../assets/icons/burger-menu.svg"
 import cross from "../../assets/icons/cross-30.png"
+import { MenuLink } from "./menu-link"
+
+import "./site-menu.scss"
 
 export const SiteMenuMobile = () => {
 
@@ -22,9 +22,7 @@ export const SiteMenuMobile = () => {
 
                         {siteMenuItems
                             .sort((a,b) => a.orderIndex - b. orderIndex)
-                            .map(m => {
-                                return (<a href={"#" + m.divId}>{m.title}</a>)
-                        })}
+                            .map(m => <MenuLink divId={m.divId} title={m.title} key={m.id}/>)}
                     </div>
                 )
             }

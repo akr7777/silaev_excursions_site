@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { appInitContent, AppSliceType, } from "../types/event-types"
-import { GetOneEventThunkResType } from "../types/event-thunk-types"
+import { GetAllEventThunkResType, GetAllNewThunkResType } from "../types/event-thunk-types"
 import { appSliceThunks } from "./app-thunks"
 
 const appSlice = createSlice({
@@ -19,15 +19,26 @@ const appSlice = createSlice({
     extraReducers: builder => {
 
       builder.addCase(appSliceThunks.getEvents.fulfilled, 
-        (state: AppSliceType, action: PayloadAction<GetOneEventThunkResType[]>) => {
-
-          // console.log('action=', action.payload);
+        (state: AppSliceType, action: PayloadAction<GetAllEventThunkResType[]>) => {
           
         if (action.payload && action.payload.length > 0) {
           state.events = [...action.payload]
             .sort((a,b) => a.date < b.date ? 1 : -1)
             .map(el => {
               return {...el, photo: el.ePreviewPhoto}
+            })
+        }
+        
+      }),
+
+      builder.addCase(appSliceThunks.getNews.fulfilled, 
+        (state: AppSliceType, action: PayloadAction<GetAllNewThunkResType[]>) => {
+          
+        if (action.payload && action.payload.length > 0) {
+          state.news = [...action.payload]
+            .sort((a,b) => a.date < b.date ? 1 : -1)
+            .map(el => {
+              return {...el, photo: el.nPreviewPhoto}
             })
         }
         
