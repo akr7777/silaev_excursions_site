@@ -1,3 +1,5 @@
+import "./carusel.scss"
+
 import prevImg from "./icons8-chevron-30-left 1.svg"
 import nextImg from "./icons8-chevron-30-right 2.svg"
 
@@ -10,7 +12,7 @@ export const ButtonGroup = ({ next, previous, goToSlide, ...rest } : PropsType) 
     // const { carouselState: { currentSlide } } = rest;
 
     return (
-      <div className="carousel-button-group"> 
+      <div className="carusel-button-group"> 
       {/* // remember to give it position:absolute */}
         {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} /> */}
 

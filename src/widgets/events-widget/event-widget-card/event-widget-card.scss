@@ -21,3 +21,13 @@
         max-height: 250px;
     }
 }
+
+.event-card-description {
+    max-height: 105px;
+    overflow: hidden;
+    font-size: 14px;
+    // line-height: 1.2;
+    // white-space: nowrap;
+    // overflow: hidden;
+    text-overflow: ellipsis;
+}

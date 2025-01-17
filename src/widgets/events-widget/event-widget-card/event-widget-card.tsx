@@ -1,21 +1,24 @@
+import dayjs from "dayjs"
 import { EventType } from "../../../store/appSlice/types/event-types"
-import "./event-card.scss"
+import { DATE_TIME_FORMAT_1 } from "../../../shared/consts"
+
+import "./event-widget-card.scss"
 
 type PropsType = {
     event: EventType
 }
 
-export const EventCard = ( {event} : PropsType ) => {
+export const EventWidgetCard = ( {event} : PropsType ) => {
     return (
         <div className="event-card-container">
             <img alt="" src={event.photo} />
             <div>
-                {event.date}
+                {dayjs(event.date).format(DATE_TIME_FORMAT_1)}
             </div>
             <div>
                 {event.title}
             </div>
-            <div>
+            <div className="event-card-description">
                 {event.description}
             </div>
 
