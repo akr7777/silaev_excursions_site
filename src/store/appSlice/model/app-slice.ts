@@ -16,6 +16,10 @@ const appSlice = createSlice({
       setGidsLoading: (state: AppSliceType, action: PayloadAction<boolean>) => {
         state.isGidsLoading = action.payload
       },
+
+      setShowItemId: (state: AppSliceType, action: PayloadAction<string | null>) => {
+        state.showItemId = action.payload
+      },
       
     },
 

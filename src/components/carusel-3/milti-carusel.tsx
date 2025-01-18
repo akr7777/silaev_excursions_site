@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { v4 } from "uuid";
 import { ButtonGroup } from "./button-group";
+
+import "react-multi-carousel/lib/styles.css";
 
 type PropsType = {
     slides: Array<ReactNode>
@@ -55,11 +56,11 @@ export const ReactMultiCarusel = (props: PropsType) => {
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
-            containerClass="carousel-container"
+            // containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
             // deviceType={this.props.deviceType}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
+            // dotListClass="custom-dot-list-style"
+            // itemClass="carousel-item-padding-40-px"
             arrows={false} 
             renderButtonGroupOutside={true} 
             customButtonGroup={<ButtonGroup next={() => {}} previous={() => {}} goToSlide={() => {}} />}

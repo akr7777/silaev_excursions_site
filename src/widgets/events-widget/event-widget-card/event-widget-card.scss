@@ -3,12 +3,12 @@
 .event-card-container {
     margin-right: 20px;
     min-width: 250px;
-    // height: 500px;
-    padding: 10px 25px;
     padding: 10px;
     border-radius: 19px;
 
     background-color: $secondary-color;
+
+    cursor: pointer;
 
     display: flex;
     flex-direction: column;

@@ -36,6 +36,8 @@ export type AppSliceType = {
 
     gids: Array<GidType>,
     isGidsLoading: boolean,
+
+    showItemId: string | null,
 }
 
 
@@ -47,4 +49,5 @@ export const appInitContent: AppSliceType = {
     isNewsLoading: false,
     gids: [],
     isGidsLoading: false,
+    showItemId: null,
 }

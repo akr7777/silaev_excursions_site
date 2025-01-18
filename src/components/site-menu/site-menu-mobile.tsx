@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { siteMenuItems } from "./menu-content"
-import burger from "../../assets/icons/burger-menu.svg"
-import cross from "../../assets/icons/cross-30.png"
 import { MenuLink } from "./menu-link"
+
+import burger from "../../assets/icons/burger-menu.svg"
+import cross from "../../assets/icons/cross.svg"
 
 import "./site-menu.scss"
 
