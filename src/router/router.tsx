@@ -3,6 +3,7 @@ import App from "../pages/app-page/App";
 import { RootPage } from "../pages/app-page/root-page";
 import { NotFoundPage } from "../pages/not-found-page/not-found-page";
 import { EventPage } from "../pages/event-page/event-page";
+import { NewsPage } from "../pages/news-page/news-page";
 
 
 export const PATHS = {
@@ -17,6 +18,7 @@ export const Router = () => {
             <Route path={PATHS.root} element={<App />} >
                 <Route index element={<RootPage />} />
                 <Route path={PATHS.events} element={<EventPage />} />
+                <Route path={PATHS.news} element={<NewsPage />} />
             </Route>
            
             <Route path="*" element={<NotFoundPage />} />
