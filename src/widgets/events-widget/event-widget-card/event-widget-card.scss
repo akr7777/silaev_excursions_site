@@ -21,6 +21,9 @@
         max-height: 250px;
     }
 }
+.event-card-container:hover {
+    background-color: $secondary-color-pointer;
+}
 
 .event-card-description {
     max-height: 105px;

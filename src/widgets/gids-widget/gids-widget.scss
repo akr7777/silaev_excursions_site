@@ -1,9 +1,18 @@
 @use "../../assets/styles/common.scss" as *;
 
 .gids-widget-container {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    // gap: 30px;
+    display: grid;
     gap: 30px;
+
+    @media screen and (min-width: 520px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 519px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .gids-widget-block-1 {
@@ -30,11 +39,16 @@
     padding: 10px;
     border-radius: 10px;
 
+    cursor: pointer;
+
     img {
         width: 100px;
         height: 100px;
         border-radius: 20px;
     }
+}
+.gids-widget-block-2-item:hover {
+    background-color: $secondary-color-pointer;
 }
 .gids-widget-block-2-item-selected {
     background-color: $secondary-color;

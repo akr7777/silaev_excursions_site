@@ -5,9 +5,9 @@ import { GidType } from "../../store/appSlice/types/app-types"
 import { useAppDispatch, useAppSelector } from "../../store/store"
 import { Preloader } from "../../components/preloader/preloader"
 import clsx from "clsx"
+import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 
 import "./gids-widget.scss"
-import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 
 export const GidsWidget = () => {
     const dispatch = useAppDispatch()
@@ -58,14 +58,16 @@ export const GidsWidget = () => {
                                     g.id === currentGid?.id && "gids-widget-block-2-item-selected"
                                 )
 
-                                return <div className={elStyle} key={g.id}>
-                                    <img alt="" src={g.avatar} />
-                                    <div>{
-                                        g.fullName.split(" ").length === 3
-                                            ? g.fullName.split(" ")[0] + " " + g.fullName.split(" ")[1]
-                                            : g.fullName
-                                    }</div>
-                                </div>
+                                return (
+                                    <div className={elStyle} key={g.id} onClick={() => setCurrentGid(g)}>
+                                        <img alt="" src={g.avatar} />
+                                        <div>{
+                                            g.fullName.split(" ").length === 3
+                                                ? g.fullName.split(" ")[0] + " " + g.fullName.split(" ")[1]
+                                                : g.fullName
+                                        }</div>
+                                    </div>
+                                )
                             })}
                         </div>
                     </div>

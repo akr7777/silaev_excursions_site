@@ -12,6 +12,7 @@ import { Preloader } from "../../components/preloader/preloader"
 import { DIV_IDS } from "../../shared/consts"
 
 import "./events-widget.scss"
+import { navFunction } from "../../shared/nav-function"
 
 export const EventWidget = () => {
     const dispatch = useAppDispatch()
@@ -25,7 +26,8 @@ export const EventWidget = () => {
     }, [])
 
     const onShowAllEvents = () => {
-        navigate(PATHS.events)
+        // navigate(PATHS.events)
+        navFunction({ divId: DIV_IDS.header, pagePath: PATHS.events, navigate})
     }
 
     return (

@@ -5,6 +5,7 @@ import { DATE_TIME_FORMAT_1 } from "../../../shared/consts"
 import "./event-widget-card.scss"
 import { useAppDispatch } from "../../../store/store"
 import { appSliceActions } from "../../../store/appSlice/model/app-slice"
+import { CustomButton } from "../../../components/custom-button/custom-button"
 
 type PropsType = {
     event: EventType
@@ -14,6 +15,10 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
     const dispatch = useAppDispatch()
     
     const onOpenEventClick = () => {
+        dispatch(appSliceActions.setShowItemId(event.id))
+    }
+
+    const onButtonClikc = () => {
         dispatch(appSliceActions.setShowItemId(event.id))
     }
 
@@ -33,7 +38,8 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
                 {event.description}
             </div>
 
-            <div>Подробнее...</div>
+            {/* <div>Подробнее...</div> */}
+            <CustomButton title="Подробнее..." onBtnClick={onButtonClikc} />
         </div>
     )
 }

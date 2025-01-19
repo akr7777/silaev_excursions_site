@@ -11,6 +11,7 @@ import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 
 import "./news-widget.scss"
 import { DIV_IDS } from "../../shared/consts"
+import { navFunction } from "../../shared/nav-function"
 
 export const NewsWidget = () => {
     const dispatch = useAppDispatch()
@@ -24,7 +25,8 @@ export const NewsWidget = () => {
     }, [])
 
     const onNewsPageNavClick = () => {
-        navigate(PATHS.news)
+        // navigate(PATHS.news)
+        navFunction({ divId: DIV_IDS.header, pagePath: PATHS.news, navigate})
     }
 
     return (

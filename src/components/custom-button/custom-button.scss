@@ -17,3 +17,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.custom-button:hover {
+    background-color: $secondary-color-pointer;
+}
