@@ -40,6 +40,14 @@ export type AppSliceType = {
     showItemId: string | null,
 }
 
+export type GidContactType = {
+    phone?: string,
+    email?: string
+    telegram?: string
+    vk?: string
+    youtube?: string
+    rutube?: string
+}
 
 
 export const appInitContent: AppSliceType = {

@@ -8,6 +8,9 @@ import clsx from "clsx"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 
 import "./gids-widget.scss"
+import { v4 } from "uuid"
+import { decodeContactsFromString } from "../../shared/contact-function"
+import { GidContactsWidget } from "./gid-contacts/gid-contacts"
 
 export const GidsWidget = () => {
     const dispatch = useAppDispatch()
@@ -38,15 +41,19 @@ export const GidsWidget = () => {
                         <div>
                             {currentGid && (
                                 <div className="gids-widget-block-1">
+
+                                    <img alt={currentGid.fullName} src={currentGid.avatar} />
+
                                     <center>
-                                        <img alt={currentGid.fullName} src={currentGid.avatar} />
+                                        <strong>{currentGid.fullName}</strong>
                                     </center>
-                                    <center>
-                                        {currentGid.fullName}
-                                    </center>
+
                                     <div>
                                         {currentGid.description}
                                     </div>
+
+                                    <GidContactsWidget contactsStr={currentGid.contactInfo}/>
+                                    
                                 </div>
                             )}
                         </div>
