@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
 import { EventType } from "../../../store/appSlice/types/app-types"
-import { DATE_TIME_FORMAT_1 } from "../../../shared/consts"
+import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../../shared/consts"
 
 import "./event-widget-card.scss"
 import { useAppDispatch } from "../../../store/store"
@@ -35,7 +35,14 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
                 {event.title}
             </div>
             <div className="event-card-description">
-                {event.description}
+                {/* {event.description} */}
+                {
+                    event.description.indexOf(LINE_DEVIDER) === -1
+                        ? <p>{event.description}</p>
+                        : <>
+                            {event.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                        </>
+                }
             </div>
 
             {/* <div>Подробнее...</div> */}

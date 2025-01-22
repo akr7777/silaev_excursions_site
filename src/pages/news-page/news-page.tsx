@@ -3,7 +3,7 @@ import { NewType } from "../../store/appSlice/types/app-types"
 import { useAppDispatch, useAppSelector } from "../../store/store"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 import dayjs from "dayjs"
-import { DATE_TIME_FORMAT_1 } from "../../shared/consts"
+import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../shared/consts"
 import { ChapterTitle } from "../../components/chapter-title/chapter-title"
 
 import "./news-page.scss"
@@ -29,9 +29,20 @@ export const NewsPage = () => {
 
                         <img alt="" src={n.photo} />
 
-                        <div>
+                        {/* <div>
                             <p>{n.description}</p>
+                        </div> */}
+                        <div>
+                            {
+                                n.description.indexOf(LINE_DEVIDER) === -1
+                                    ? <p>{n.description}</p>
+                                    : <>
+                                        {n.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                                    </>
+                            }
                         </div>
+
+                        {n.link && <a href={n.link}>{n.link}</a>}
                     </div>
                 )
             })}

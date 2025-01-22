@@ -3,7 +3,7 @@ import { EventType } from "../../store/appSlice/types/app-types"
 import { useAppDispatch, useAppSelector } from "../../store/store"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 import dayjs from "dayjs"
-import { DATE_TIME_FORMAT_1 } from "../../shared/consts"
+import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../shared/consts"
 import { ChapterTitle } from "../../components/chapter-title/chapter-title"
 
 import "./event-page.scss"
@@ -30,8 +30,17 @@ export const EventPage = () => {
                         <img alt="" src={e.photo} />
 
                         <div>
-                            <p>{e.description}</p>
+                            {/* <p>{e.description}</p> */}
+                            {
+                                e.description.indexOf(LINE_DEVIDER) === -1
+                                    ? <p>{e.description}</p>
+                                    : <>
+                                        {e.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                                    </>
+                            }
                         </div>
+
+                        {e.link && <a href={e.link}>{e.link}</a>}
                     </div>
                 )
             })}

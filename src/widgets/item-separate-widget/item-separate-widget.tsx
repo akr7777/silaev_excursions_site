@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
 import { CustomButton } from "../../components/custom-button/custom-button"
 import { EventType, NewType } from "../../store/appSlice/types/app-types"
-import { DATE_TIME_FORMAT_1 } from "../../shared/consts"
+import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../shared/consts"
 import { BgLayout } from "../../components/bg-layout/bg-layout"
 import { useAppDispatch } from "../../store/store"
 import { appSliceActions } from "../../store/appSlice/model/app-slice"
@@ -47,10 +47,18 @@ export const ItemSeparateWidget = ( { item } : PropsType) => {
                 </div>
 
                 <div>
-                    <p>
-                        {item.description}
-                    </p>
+                    {/* <p>{item.description}</p> */}
+                    {
+                        item.description.indexOf(LINE_DEVIDER) === -1
+                            ? <p>{item.description}</p>
+                            : <>
+                                {item.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                            </>
+                    }
                 </div>
+
+                {item.link && <a href={item.link}>{item.link}</a>}
+
 
                 <CustomButton title="Закрыть" onBtnClick={onCloseClick} additionalStyles={"item-separate-widget-button"} />
             </div>

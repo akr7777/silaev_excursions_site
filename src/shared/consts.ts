@@ -8,3 +8,5 @@ export const DIV_IDS = {
     gids: 'gids',
     contacts: 'contacts',
 }
+
+export const LINE_DEVIDER = "\n"
