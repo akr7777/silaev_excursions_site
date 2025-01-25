@@ -1,4 +1,5 @@
 import { ContactType } from "./contacts-widget-info"
+
 import "./contacts-widget.scss"
 
 export const ContactsWidgetCard = ({ c } : { c: ContactType }) => {

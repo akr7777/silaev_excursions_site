@@ -2,9 +2,9 @@ import { v4 } from "uuid"
 import { ChapterTitle } from "../../components/chapter-title/chapter-title"
 import { contactsInfo } from "./contacts-widget-info"
 import { ContactsWidgetCard } from "./contacts-widget-card"
+import { DIV_IDS } from "../../shared/consts"
 
 import "./contacts-widget.scss"
-import { DIV_IDS } from "../../shared/consts"
 
 export const ContactsWidget = () => {
     return (

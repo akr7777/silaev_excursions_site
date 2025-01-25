@@ -1,7 +1,8 @@
-import silaevPhoto from "../../assets/images/contacts/silaev.svg"
+import silaevPhoto from "../../assets/images/contacts/silaev-2.jpg"
 import krinitsinaPhoto from "../../assets/images/contacts/krinitsina.jpg"
 import baranovskiyPhoto from "../../assets/images/contacts/baranovskiy.jpg"
-import avatar from "../../assets/images/contacts/avatar.png"
+// import avatar from "../../assets/images/contacts/avatar.png"
+import aleksandrovichPhoto from "../../assets/images/contacts/aleksandrovich.jpg"
 
 export type ContactType = {
     photo: string,
@@ -32,7 +33,7 @@ export const contactsInfo: ContactType[] = [
         role: "Соруководитель",
         phone: "+7 (916) 824-45-21",
         email: "sasha-silaev@mail.ru",
-        photo: avatar,
+        photo: aleksandrovichPhoto,
     },
     {
         name: "Андрей Барановский",
