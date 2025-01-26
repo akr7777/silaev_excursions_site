@@ -1,3 +1,4 @@
+import { v4 } from "uuid"
 import { CustomButton } from "../../components/custom-button/custom-button"
 import { LINE_DEVIDER } from "../../shared/consts"
 import { appSliceActions } from "../../store/appSlice/model/app-slice"
@@ -25,7 +26,7 @@ export const NewsWidgetCard = ( { n } : { n: NewType }) => {
                     n.description.indexOf(LINE_DEVIDER) === -1
                         ? <p>{n.description}</p>
                         : <>
-                            {n.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                            {n.description.split(LINE_DEVIDER).map(paragraph => <p key={v4()}>{paragraph}</p>)}
                         </>
                 }
                 <CustomButton title="Подробнее" onBtnClick={onButtonClickHandler}/>

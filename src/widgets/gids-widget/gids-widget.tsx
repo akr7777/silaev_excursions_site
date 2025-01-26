@@ -6,11 +6,11 @@ import { useAppDispatch, useAppSelector } from "../../store/store"
 import { Preloader } from "../../components/preloader/preloader"
 import clsx from "clsx"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
+import { GidContactsWidget } from "./gid-contacts/gid-contacts"
 
 import "./gids-widget.scss"
-import { v4 } from "uuid"
-import { decodeContactsFromString } from "../../shared/contact-function"
-import { GidContactsWidget } from "./gid-contacts/gid-contacts"
+
+import noPhotoAvatar from "../../assets/images/contacts/avatar.png"
 
 export const GidsWidget = () => {
     const dispatch = useAppDispatch()
@@ -42,7 +42,10 @@ export const GidsWidget = () => {
                             {currentGid && (
                                 <div className="gids-widget-block-1">
 
-                                    <img alt={currentGid.fullName} src={currentGid.avatar} />
+                                    <img 
+                                        alt={currentGid.fullName} 
+                                        src={currentGid.avatar ? currentGid.avatar : noPhotoAvatar} 
+                                    />
 
                                     <center>
                                         <strong>{currentGid.fullName}</strong>
@@ -67,7 +70,7 @@ export const GidsWidget = () => {
 
                                 return (
                                     <div className={elStyle} key={g.id} onClick={() => setCurrentGid(g)}>
-                                        <img alt="" src={g.avatar} />
+                                        <img alt="" src={g.avatar ? g.avatar : noPhotoAvatar} />
                                         <div>{
                                             g.fullName.split(" ").length === 3
                                                 ? g.fullName.split(" ")[0] + " " + g.fullName.split(" ")[1]

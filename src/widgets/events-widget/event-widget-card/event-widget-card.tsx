@@ -1,11 +1,12 @@
 import dayjs from "dayjs"
 import { EventType } from "../../../store/appSlice/types/app-types"
 import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../../shared/consts"
-
-import "./event-widget-card.scss"
 import { useAppDispatch } from "../../../store/store"
 import { appSliceActions } from "../../../store/appSlice/model/app-slice"
 import { CustomButton } from "../../../components/custom-button/custom-button"
+
+import "./event-widget-card.scss"
+import { v4 } from "uuid"
 
 type PropsType = {
     event: EventType
@@ -40,7 +41,7 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
                     event.description.indexOf(LINE_DEVIDER) === -1
                         ? <p>{event.description}</p>
                         : <>
-                            {event.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                            {event.description.split(LINE_DEVIDER).map(paragraph => <p key={v4()}>{paragraph}</p>)}
                         </>
                 }
             </div>
