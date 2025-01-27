@@ -8,13 +8,20 @@
 
 .news-widget-card {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
 
     img {
         max-width: 200px;
         max-height: 200px;
         border-radius: 7px;
+    }
+
+    @media screen and (min-width: 610px) {
+        flex-direction: row;
+        gap: 30px;
+    }
+    @media screen and (max-width: 609px) {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 

@@ -30,7 +30,7 @@ export const NewsWidget = () => {
     }
 
     return (
-        <div className="chapter-wrapper news-widget-container" id={DIV_IDS.news}>
+        <div className="chapter-wrapper news-widget-container chapter-wrapper-vertical-padding" id={DIV_IDS.news}>
             <ChapterTitle title="Наши новости" />
 
             {isLoading ? <Preloader /> : (<>

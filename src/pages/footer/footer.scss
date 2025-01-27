@@ -1,0 +1,11 @@
+@use "../../assets/styles/common.scss" as *;
+
+footer {
+    height: 85px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

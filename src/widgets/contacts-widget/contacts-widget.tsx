@@ -8,7 +8,7 @@ import "./contacts-widget.scss"
 
 export const ContactsWidget = () => {
     return (
-        <div className="chapter-wrapper" id={DIV_IDS.contacts}>
+        <div className="chapter-wrapper chapter-wrapper-vertical-padding" id={DIV_IDS.contacts}>
             <ChapterTitle title="Наши контакты" />
 
             <div className="contacts-widget-description">

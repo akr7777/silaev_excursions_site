@@ -31,7 +31,7 @@ export const EventWidget = () => {
     }
 
     return (
-        <div className="chapter-wrapper-no-right-padding" id={DIV_IDS.events}>
+        <div className="chapter-wrapper-no-right-padding chapter-wrapper-vertical-padding" id={DIV_IDS.events}>
 
             <ChapterTitle title="Наши мероприятия"/>
 
@@ -49,7 +49,7 @@ export const EventWidget = () => {
             </>)}
             
 
-            <div className="common-btn-container">
+            <div className="common-btn-container chapter-wrapper">
                 <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} />
             </div>
 

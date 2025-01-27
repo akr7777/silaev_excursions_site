@@ -31,7 +31,7 @@ export const GidsWidget = () => {
     }, [])
 
     return (
-        <div className="chapter-wrapper" id={DIV_IDS.gids}>
+        <div className="chapter-wrapper chapter-wrapper-vertical-padding" id={DIV_IDS.gids}>
             <ChapterTitle title="Наши экскурсоводы" />
 
             {
@@ -70,12 +70,24 @@ export const GidsWidget = () => {
 
                                 return (
                                     <div className={elStyle} key={g.id} onClick={() => setCurrentGid(g)}>
-                                        <img alt="" src={g.avatar ? g.avatar : noPhotoAvatar} />
-                                        <div>{
+                                        {/* <img alt="" src={g.avatar ? g.avatar : noPhotoAvatar} /> */}
+
+                                        <div style={{
+                                                backgroundImage: `url("${g.avatar ? g.avatar : noPhotoAvatar}")`,
+                                                backgroundPosition: 'center',
+                                                backgroundSize: 'cover',
+                                                backgroundRepeat: 'no-repeat',
+                                                width: '100%',
+                                                height: '100%',
+                                                borderRadius: '20px',
+                                            }} 
+                                        />
+                                        {/* <div className="ttt" /> */}
+                                        <center>{
                                             g.fullName.split(" ").length === 3
                                                 ? g.fullName.split(" ")[0] + " " + g.fullName.split(" ")[1]
                                                 : g.fullName
-                                        }</div>
+                                        }</center>
                                     </div>
                                 )
                             })}

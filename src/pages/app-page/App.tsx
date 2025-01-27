@@ -1,6 +1,7 @@
 import { Header } from '../header/header'
 import { ContactsWidget } from '../../widgets/contacts-widget/contacts-widget'
 import { Outlet } from 'react-router'
+import { Footer } from '../footer/footer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Outlet />
         <ContactsWidget />
       </main>
+      <Footer />
     </>
   )
 }
