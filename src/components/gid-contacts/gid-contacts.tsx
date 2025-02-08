@@ -1,17 +1,16 @@
-import { GidContactType } from "../../../store/appSlice/types/app-types"
-import { decodeContactsFromString } from "../../../shared/contact-function"
+import { GidContactType } from "../../store/appSlice/types/app-types"
+import { decodeContactsFromString } from "../../shared/contact-function"
 
 import "./gid-contacts.scss"
 
-import phoneIcon from "../../../assets/icons/contact-icons/phone-icon.png"
-import emailIcon from "../../../assets/icons/contact-icons/email-icon.png"
-import telegramIcon from "../../../assets/icons/contact-icons/telegram-icon.png"
-import vkIcon from "../../../assets/icons/contact-icons/vk-icon.png"
-import rutubeIcon from "../../../assets/icons/contact-icons/rutube-icon.jpg"
-import youtubeIcon from "../../../assets/icons/contact-icons/youtube-icon.png"
+import phoneIcon from "../../assets/icons/contact-icons/phone-icon.png"
+import emailIcon from "../../assets/icons/contact-icons/email-icon.png"
+import telegramIcon from "../../assets/icons/contact-icons/telegram-icon.png"
+import vkIcon from "../../assets/icons/contact-icons/vk-icon.png"
+import rutubeIcon from "../../assets/icons/contact-icons/rutube-icon.jpg"
+import youtubeIcon from "../../assets/icons/contact-icons/youtube-icon.png"
 
 type PropsType = {
-    // contacts: GidContactType
     contactsStr: string | undefined
 }
 

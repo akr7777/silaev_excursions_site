@@ -20,6 +20,9 @@ const appSlice = createSlice({
       setShowItemId: (state: AppSliceType, action: PayloadAction<string | null>) => {
         state.showItemId = action.payload
       },
+      setMobileMenuShown: (state: AppSliceType, action: PayloadAction<boolean>) => {
+        state.isMobileMenuShown = action.payload
+      },
       
     },
 

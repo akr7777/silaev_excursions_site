@@ -6,11 +6,12 @@ import { useAppDispatch, useAppSelector } from "../../store/store"
 import { Preloader } from "../../components/preloader/preloader"
 import clsx from "clsx"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
-import { GidContactsWidget } from "./gid-contacts/gid-contacts"
+import { GidContactsWidget } from "../../components/gid-contacts/gid-contacts"
 import noPhotoAvatar from "../../assets/images/contacts/avatar.png"
 import { navFunction } from "../../shared/nav-function"
 import { useNavigate } from "react-router"
 import { PATHS } from "../../router/router"
+import { CustomButton } from "../../components/custom-button/custom-button"
 
 import "./gids-widget.scss"
 
@@ -38,13 +39,21 @@ export const GidsWidget = () => {
             setCurrentGid(gid)
             setTimeout(() => {
                 navFunction({
-                    divId: DIV_IDS.gids, 
+                    divId: DIV_IDS.currentGidWidget, 
                     pagePath: PATHS.root, 
                     navigate
                 })
             }, 300)
             
         }
+    }
+
+    const onShowAllGidsClick = () => {
+        navFunction({
+            divId: DIV_IDS.header,
+            pagePath: PATHS.gids,
+            navigate,
+        })
     }
 
     return (
@@ -57,7 +66,7 @@ export const GidsWidget = () => {
 
                         <div>
                             {currentGid && (
-                                <div className="gids-widget-block-1">
+                                <div className="gids-widget-block-1" id={DIV_IDS.currentGidWidget}>
 
                                     <img 
                                         alt={currentGid.fullName} 
@@ -109,9 +118,16 @@ export const GidsWidget = () => {
                                 )
                             })}
                         </div>
+
+                        <div />
+
                     </div>
                 )
             }
+
+            <div className="common-btn-container chapter-wrapper-no-right-padding gids-widget-btn-margin">
+                <CustomButton title={"Посмотреть всех экскурсоводов"} onBtnClick={onShowAllGidsClick} isBoldText={true} />
+            </div>
 
         </div>
     )

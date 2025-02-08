@@ -1,0 +1,20 @@
+@use "../../assets/styles/common.scss" as *;
+
+.gid-page {
+    display: grid;
+
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+
+    img {
+        width: 300px;
+        border-radius: 20px;
+    }
+
+    @media screen and (min-width: 500px) {
+        grid-template-columns: 300px 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        place-items: center left;
+    }
+}

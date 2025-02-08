@@ -1,3 +1,4 @@
+@use "./scroll-bar.scss" as *;
 
 $side-padding-large: 30px;
 $side-padding-mobile: 10px;
@@ -15,8 +16,6 @@ $side-padding-mobile: 10px;
 
 .chapter-wrapper-no-right-padding {
     box-sizing: border-box;
-    // margin-top: 20px;
-    // margin-bottom: 20px;
     
     @media screen and (min-width: 500px) {
         margin-left: $side-padding-large;

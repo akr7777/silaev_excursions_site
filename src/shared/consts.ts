@@ -7,6 +7,8 @@ export const DIV_IDS = {
     news: 'news',
     gids: 'gids',
     contacts: 'contacts',
+    allGidsPage: 'all-gids-page',
+    currentGidWidget: 'current-gid-widget',
 }
 
 export const LINE_DEVIDER = "\n"

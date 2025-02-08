@@ -38,6 +38,7 @@ export type AppSliceType = {
     isGidsLoading: boolean,
 
     showItemId: string | null,
+    isMobileMenuShown: boolean,
 }
 
 export type GidContactType = {
@@ -58,4 +59,5 @@ export const appInitContent: AppSliceType = {
     gids: [],
     isGidsLoading: false,
     showItemId: null,
+    isMobileMenuShown: false,
 }

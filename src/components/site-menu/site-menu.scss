@@ -30,6 +30,12 @@
         cursor: pointer;
     }
 }
+.nav-mobile-cross-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
 
 .mobile-menu-area {
     position: fixed;

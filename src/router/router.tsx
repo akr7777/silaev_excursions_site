@@ -4,12 +4,14 @@ import { RootPage } from "../pages/app-page/root-page";
 import { NotFoundPage } from "../pages/not-found-page/not-found-page";
 import { EventPage } from "../pages/event-page/event-page";
 import { NewsPage } from "../pages/news-page/news-page";
+import { GidsPage } from "../pages/gid-page/gid-page";
 
 
 export const PATHS = {
     root: '/',
     events: '/events',
-    news: '/news'
+    news: '/news',
+    gids: '/gids',
 }
 
 export const Router = () => {
@@ -19,6 +21,7 @@ export const Router = () => {
                 <Route index element={<RootPage />} />
                 <Route path={PATHS.events} element={<EventPage />} />
                 <Route path={PATHS.news} element={<NewsPage />} />
+                <Route path={PATHS.gids} element={<GidsPage />} />
             </Route>
            
             <Route path="*" element={<NotFoundPage />} />
