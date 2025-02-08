@@ -17,7 +17,7 @@ export const NewsWidgetCard = ( { n } : { n: NewType }) => {
     return (
         <div className="news-widget-card">
 
-            <img alt="" src={n.photo} />
+            <img alt={n.title} src={n.photo} />
 
             <div className="news-widget-card-text">
                 <h3>{n.title}</h3>

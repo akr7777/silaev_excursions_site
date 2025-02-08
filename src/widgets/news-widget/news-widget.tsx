@@ -34,9 +34,12 @@ export const NewsWidget = () => {
             <ChapterTitle title="Наши новости" />
 
             {isLoading ? <Preloader /> : (<>
-                {news
+                {news.length > 0 
+                ? news
                     .slice(0, 3)
-                    .map(n => <NewsWidgetCard n={n} key={n.id} />)}
+                    .map(n => <NewsWidgetCard n={n} key={n.id} />)
+                : <div>Пока нет новостей</div>
+                }
             </>)}
 
             <div className="common-btn-container">

@@ -36,7 +36,7 @@ export const EventWidget = () => {
             <ChapterTitle title="Наши мероприятия"/>
 
             { isLoading ? <Preloader /> : (<>
-                {!showItemId &&
+                {!showItemId && events.length > 0 &&
                     <ReactMultiCarusel slides={
                         !events ? [] : events.map(e => {
                             return (
@@ -47,11 +47,15 @@ export const EventWidget = () => {
                 }
                 
             </>)}
+
+            {events.length <= 0 && <div>Пока нет активных мероприятий</div>}
             
 
-            <div className="common-btn-container chapter-wrapper">
-                <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} />
-            </div>
+            {events.length > 0 && 
+                <div className="common-btn-container chapter-wrapper">
+                    <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} />
+                </div>
+            }
 
         </div>
     )

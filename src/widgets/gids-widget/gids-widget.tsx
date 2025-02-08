@@ -7,13 +7,16 @@ import { Preloader } from "../../components/preloader/preloader"
 import clsx from "clsx"
 import { appSliceThunks } from "../../store/appSlice/model/app-thunks"
 import { GidContactsWidget } from "./gid-contacts/gid-contacts"
+import noPhotoAvatar from "../../assets/images/contacts/avatar.png"
+import { navFunction } from "../../shared/nav-function"
+import { useNavigate } from "react-router"
+import { PATHS } from "../../router/router"
 
 import "./gids-widget.scss"
 
-import noPhotoAvatar from "../../assets/images/contacts/avatar.png"
-
 export const GidsWidget = () => {
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
 
     const gids: GidType[] = useAppSelector(state => state.appSlice.gids)
     const isLoading: boolean = useAppSelector(state => state.appSlice.isGidsLoading)
@@ -29,6 +32,17 @@ export const GidsWidget = () => {
     useEffect(() => {
         dispatch(appSliceThunks.getGids())
     }, [])
+
+    const onGidCardClickHandler = (gid: GidType | undefined) => {
+        if (gid) {
+            setCurrentGid(gid)
+            navFunction({
+                divId: DIV_IDS.gids, 
+                pagePath: PATHS.root, 
+                navigate
+            })
+        }
+    }
 
     return (
         <div className="chapter-wrapper chapter-wrapper-vertical-padding" id={DIV_IDS.gids}>
@@ -69,7 +83,7 @@ export const GidsWidget = () => {
                                 )
 
                                 return (
-                                    <div className={elStyle} key={g.id} onClick={() => setCurrentGid(g)}>
+                                    <div className={elStyle} key={g.id} onClick={() => onGidCardClickHandler(g)}>
                                         {/* <img alt="" src={g.avatar ? g.avatar : noPhotoAvatar} /> */}
 
                                         <div style={{
