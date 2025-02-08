@@ -3,8 +3,6 @@
 .custom-button {
     background-color: $secondary-color;
     color: black;
-    // font-size: 16px;
-    font-weight: bold;
 
     padding: 9px 20px;
     border-radius: 10px;
@@ -21,4 +19,8 @@
 
 .custom-button:hover {
     background-color: $secondary-color-pointer;
+}
+
+.custom-button-bold {
+    font-weight: bold;
 }

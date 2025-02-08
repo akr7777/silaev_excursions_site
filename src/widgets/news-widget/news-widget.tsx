@@ -43,7 +43,7 @@ export const NewsWidget = () => {
             </>)}
 
             <div className="common-btn-container">
-                <CustomButton title="Посмотреть все новости" onBtnClick={onNewsPageNavClick} />
+                <CustomButton title="Посмотреть все новости" onBtnClick={onNewsPageNavClick} isBoldText={true} />
             </div>
         </div>
     )

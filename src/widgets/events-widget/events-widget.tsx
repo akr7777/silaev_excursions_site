@@ -53,7 +53,7 @@ export const EventWidget = () => {
 
             {events.length > 0 && 
                 <div className="common-btn-container chapter-wrapper">
-                    <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} />
+                    <CustomButton title="Посмотреть все мероприятия" onBtnClick={onShowAllEvents} isBoldText={true} />
                 </div>
             }
 

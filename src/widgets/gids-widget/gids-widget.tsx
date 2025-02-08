@@ -36,11 +36,14 @@ export const GidsWidget = () => {
     const onGidCardClickHandler = (gid: GidType | undefined) => {
         if (gid) {
             setCurrentGid(gid)
-            navFunction({
-                divId: DIV_IDS.gids, 
-                pagePath: PATHS.root, 
-                navigate
-            })
+            setTimeout(() => {
+                navFunction({
+                    divId: DIV_IDS.gids, 
+                    pagePath: PATHS.root, 
+                    navigate
+                })
+            }, 300)
+            
         }
     }
 

@@ -4,9 +4,9 @@ import { DATE_TIME_FORMAT_1, LINE_DEVIDER } from "../../../shared/consts"
 import { useAppDispatch } from "../../../store/store"
 import { appSliceActions } from "../../../store/appSlice/model/app-slice"
 import { CustomButton } from "../../../components/custom-button/custom-button"
+import { v4 } from "uuid"
 
 import "./event-widget-card.scss"
-import { v4 } from "uuid"
 
 type PropsType = {
     event: EventType
@@ -28,7 +28,7 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
             className="event-card-container"
             onClick={onOpenEventClick}
         >
-            <img alt="" src={event.photo} />
+            <img alt={event.title} src={event.photo} />
             <div>
                 {dayjs(event.date).format(DATE_TIME_FORMAT_1)}
             </div>
