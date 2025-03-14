@@ -21,7 +21,6 @@ export const NewsWidgetCard = ( { n } : { n: NewType }) => {
 
             <div className="news-widget-card-text">
                 <h3>{n.title}</h3>
-                {/* <p>{n.description}</p> */}
                 {
                     n.description.indexOf(LINE_DEVIDER) === -1
                         ? <p>{n.description}</p>

@@ -36,7 +36,7 @@ export const EventWidgetCard = ( {event} : PropsType ) => {
                 {event.title}
             </div>
             <div className="event-card-description">
-                {/* {event.description} */}
+                <>346</>
                 {
                     event.description.indexOf(LINE_DEVIDER) === -1
                         ? <p>{event.description}</p>

@@ -3,7 +3,7 @@
 .event-card-container {
     margin-right: 20px;
     min-width: 250px;
-    // height: 400px;
+    height: 500px;
     padding: 30px 10px 10px 10px;
     border-radius: 19px;
 
@@ -28,7 +28,8 @@
 }
 
 .event-card-description {
-    max-height: 105px;
+    flex: 1;
+    // max-height: 105px;
     overflow: hidden;
     font-size: 14px;
     // line-height: 1.2;

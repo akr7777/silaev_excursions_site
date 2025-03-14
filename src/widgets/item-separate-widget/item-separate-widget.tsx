@@ -9,6 +9,7 @@ import { appSliceActions } from "../../store/appSlice/model/app-slice"
 import "./item-separate.scss"
 
 import crossImg from "../../assets/icons/cross.svg"
+import { v4 } from "uuid"
 
 type PropsType = {
     item: EventType | NewType
@@ -47,12 +48,11 @@ export const ItemSeparateWidget = ( { item } : PropsType) => {
                 </div>
 
                 <div>
-                    {/* <p>{item.description}</p> */}
                     {
                         item.description.indexOf(LINE_DEVIDER) === -1
                             ? <p>{item.description}</p>
                             : <>
-                                {item.description.split(LINE_DEVIDER).map(paragraph => <p>{paragraph}</p>)}
+                                {item.description.split(LINE_DEVIDER).map(paragraph => <p key={v4()}> {paragraph}</p>)}
                             </>
                     }
                 </div>

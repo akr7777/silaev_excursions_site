@@ -34,7 +34,7 @@
 
 .news-widget-card-text {
     display: grid;
-    grid-template-rows: 30px 1fr 1frpx;
+    grid-template-rows: 30px 1fr 40px;
 
     h3 { 
         margin: 0;
@@ -43,7 +43,8 @@
 
     p {
         margin: 0 0 10px 0;
-
+        // flex: 1;
     }
 
 }
+
