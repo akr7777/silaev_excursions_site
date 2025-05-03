@@ -1,21 +1,13 @@
 @use "../../assets/styles/common.scss" as *;
 
 .wellcome-container {
-    width: 100%;
-    min-height: 700px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    // background-image: url("../../assets/images/bg-collage.webp") ;
-    // padding: 20px 0;
-
-    img {
-        max-width: 50%;
-        height: auto;
-        max-height: 50%;
-        border-radius: 50%;
+    h2 {
+        @media screen and (min-width: 450px) {
+            font-size: 1.5em;
+        }
+        @media screen and (max-width: 449px) {
+            font-size: 1.3em;
+        }
     }
+    
 }
